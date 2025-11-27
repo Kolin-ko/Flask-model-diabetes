@@ -1,8 +1,13 @@
 from flask import Flask, jsonify, request
 import pandas as pd
+
+from flask_cors import CORS
 import joblib
 
 app = Flask(__name__)
+CORS(app)
+
+
 
 loaded_model = joblib.load("models/model_diabetes.pkl")
 loaded_scaler = joblib.load("models/standar_scaler.pkl")
@@ -16,6 +21,8 @@ columns = [
     'DiabetesPedigreeFunction',
     'Age'
 ]
+
+
 
 @app.route('/')
 def index():
