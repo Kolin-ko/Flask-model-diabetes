@@ -49,7 +49,7 @@ def predict():
             "status": "Success",
             "message": "Prediction"
         },
-        "data": prediction.toList()[0]
+        "data": prediction.tolist()[0]
     })
 
 if __name__ == '__main__':
